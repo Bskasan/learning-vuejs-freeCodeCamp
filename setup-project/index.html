@@ -35,16 +35,16 @@
   <body>
     <div id="app" v-cloak>
       {{greetings}}
-      <input @keyup.enter="greet" v-model="greetings" />
+      <input @keyup.enter="greet(greetings + '!!!!!!!')" v-model="greetings" />
 
       <hr />
 
       <!-- <div v-show="isVisible" class="box"></div> -->
       <!-- We can manipulate v-show in order to change the visibility, but the difference between them is that if you use v-show the div will stay in the DOM-->
 
-      <button @click="activatePurple">Show Purple Box</button>
-      <button @click="activateGreen">Show Green Box</button>
-      <button @click="activateMarina">Show Marina Box</button>
+      <button @click.left="activatePurple">Show Purple Box</button>
+      <button @click.left="activateGreen">Show Green Box</button>
+      <button @click.left="activateMarina">Show Marina Box</button>
 
       <div v-if="isVisible" class="box"></div>
       <div v-else-if="isVisibleSecondBox" class="box two"></div>
@@ -72,8 +72,8 @@
             this.isVisible = false;
             this.isVisibleSecondBox = false;
           },
-          greet() {
-            console.log(this.greetings);
+          greet(greetings) {
+            console.log(greetings);
           },
         },
       });
