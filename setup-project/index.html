@@ -43,7 +43,7 @@
       <!-- We can manipulate v-show in order to change the visibility, but the difference between them is that if you use v-show the div will stay in the DOM-->
 
       <button @click.left="activatePurple">Show Purple Box</button>
-      <button @click.left="activateGreen">Show Green Box</button>
+      <button @click.prevent="activateGreen">Show Green Box</button>
       <button @click.left="activateMarina">Show Marina Box</button>
 
       <div v-if="isVisible" class="box"></div>
